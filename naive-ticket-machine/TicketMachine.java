@@ -12,7 +12,7 @@
 public class TicketMachine
 {
     // The price of a ticket from this machine.
-    private int price;
+    private int price = 0;
     // The amount of money entered by a customer so far.
     private int balance;
     // The total amount of money collected by this machine.
@@ -23,9 +23,12 @@ public class TicketMachine
      * Note that the price must be greater than zero, and there
      * are no checks to ensure this.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int price)
     {
-        price = cost;
+        if (price < 0)
+            System.out.println("needs a positive price");
+        else
+            this.price = price;
         balance = 0;
         total = 0;
     }
@@ -52,7 +55,10 @@ public class TicketMachine
      */
     public void insertMoney(int amount)
     {
-        balance = balance + amount;
+        if (amount > 0)
+          balance = balance + amount;
+        else
+          System.out.println("Bitte geben Sie einen positiven Betrag ein");
     }
 
     /**
@@ -62,6 +68,11 @@ public class TicketMachine
      */
     public void printTicket()
     {
+        if (balance < price){
+            System.out.println("Es wurde nicht genug Geld eingeworfen");
+            return;
+        }
+        
         // Simulate the printing of a ticket.
         System.out.println("##################");
         System.out.println("# The BlueJ Line");
