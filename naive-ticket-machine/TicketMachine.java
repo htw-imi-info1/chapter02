@@ -62,6 +62,16 @@ public class TicketMachine
     }
 
     /**
+     * refund the balance (Wechselgeld)
+     * to be called after issuing a ticket.
+     */
+    public int refundBalance(){
+        int refund = balance;
+        balance = 0;
+        return refund;
+    }
+    
+    /**
      * Print a ticket.
      * Update the total collected and
      * reduce the balance to zero.
@@ -84,6 +94,6 @@ public class TicketMachine
         // Update the total collected with the balance.
         total = total + balance;
         // Clear the balance.
-        balance = 0;
+        balance = balance - price;
     }
 }
