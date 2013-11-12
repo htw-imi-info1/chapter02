@@ -44,6 +44,7 @@ public class TicketMachine
     {
         return price;
     }
+
     public int getDiscountedPrice()
     {
         // Ex 3: assignment statement   
@@ -88,7 +89,6 @@ public class TicketMachine
         return refund;
     }
 
-    
     /**
      * Print a ticket.
      * Update the total collected and
@@ -96,7 +96,7 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        
+
         if (balance < getDiscountedPrice()){
             System.out.println("Es wurde nicht genug Geld eingeworfen");
             return;
@@ -115,5 +115,18 @@ public class TicketMachine
         total = total + getDiscountedPrice();
         // Clear the balance.
         balance = balance - getDiscountedPrice();
+    }
+
+    public static void test(){
+        TicketMachine bvg = new TicketMachine(260);
+        bvg.setDiscount(0.2);
+        bvg.insertMoney(400);
+        bvg.printTicket();
+    }
+    public static void test2(){
+        TicketMachine bvg = new TicketMachine(260);
+        bvg.setDiscount(-0.2);
+        bvg.insertMoney(400);
+        bvg.printTicket();
     }
 }
