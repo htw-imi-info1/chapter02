@@ -17,6 +17,10 @@ public class TicketMachine
     private int balance;
     // The sum of money for all tickets issued
     private int total;
+    // Ex 1: count tickets
+    private int count = 0;
+    // Ex 2: introduce discount
+    private double discount = 0; // initialize with no discount
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -36,9 +40,17 @@ public class TicketMachine
     /**
      * Return the price of a ticket.
      */
-    public int getPrice()
+    public int getBasePrice()
     {
         return price;
+    }
+    public int getDiscountedPrice()
+    {
+        // Ex 3: assignment statement   
+        int saving = (int)Math.round(price * discount);
+        // Ex 4: use the discount
+        int actualPrice = price - saving;
+        return actualPrice;
     }
 
     /**
@@ -49,6 +61,11 @@ public class TicketMachine
     {
         return balance;
     }
+    // Ex 2: introduce discount
+    public void setDiscount(double discount){
+        if ((discount >= 0) && (discount <= 1))
+            this.discount = discount;
+    }
 
     /**
      * Receive an amount of money from a customer.
@@ -56,9 +73,9 @@ public class TicketMachine
     public void insertMoney(int amount)
     {
         if (amount > 0)
-          balance = balance + amount;
+            balance = balance + amount;
         else
-          System.out.println("Bitte geben Sie einen positiven Betrag ein");
+            System.out.println("Bitte geben Sie einen positiven Betrag ein");
     }
 
     /**
@@ -70,6 +87,7 @@ public class TicketMachine
         balance = 0;
         return refund;
     }
+
     
     /**
      * Print a ticket.
@@ -78,22 +96,24 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        if (balance < price){
+        
+        if (balance < getDiscountedPrice()){
             System.out.println("Es wurde nicht genug Geld eingeworfen");
             return;
         }
-        
+
         // Simulate the printing of a ticket.
         System.out.println("##################");
         System.out.println("# The BlueJ Line");
         System.out.println("# Ticket");
-        System.out.println("# " + price + " cents.");
+        System.out.println("# " + getDiscountedPrice() + " cents.");
         System.out.println("##################");
         System.out.println();
-
+        // Ex 1: count tickets
+        count++;
         // Update the total collected with the balance.
-        total = total + price;
+        total = total + getDiscountedPrice();
         // Clear the balance.
-        balance = balance - price;
+        balance = balance - getDiscountedPrice();
     }
 }
