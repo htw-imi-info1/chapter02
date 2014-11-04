@@ -25,7 +25,12 @@ public class TicketMachine
      */
     public TicketMachine(int cost)
     {
-        price = cost;
+        if (cost > 0){
+            price = cost;
+        }
+        else{
+            price = 260; // einzelticket bvg als sinnvoller default
+        }
         balance = 0;
         total = 0;
     }
@@ -72,9 +77,9 @@ public class TicketMachine
             System.out.println();
 
             // Update the total collected with the balance.
-            total = total + balance;
+            total = total + price;
             // Clear the balance.
-            balance = 0;
+            balance = balance - price;
         }
         else {
             System.out.println("Es ist nicht genug Geld eingeworfen worden");
