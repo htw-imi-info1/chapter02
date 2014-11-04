@@ -62,17 +62,23 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        // Simulate the printing of a ticket.
-        System.out.println("##################");
-        System.out.println("# The BlueJ Line");
-        System.out.println("# Ticket");
-        System.out.println("# " + price + " cents.");
-        System.out.println("##################");
-        System.out.println();
+        if (balance >= price){
+            // Simulate the printing of a ticket.
+            System.out.println("##################");
+            System.out.println("# The BlueJ Line");
+            System.out.println("# Ticket");
+            System.out.println("# " + price + " cents.");
+            System.out.println("##################");
+            System.out.println();
 
-        // Update the total collected with the balance.
-        total = total + balance;
-        // Clear the balance.
-        balance = 0;
+            // Update the total collected with the balance.
+            total = total + balance;
+            // Clear the balance.
+            balance = 0;
+        }
+        else {
+            System.out.println("Es ist nicht genug Geld eingeworfen worden");
+            System.out.println("Balance: "+balance);
+        }
     }
 }
