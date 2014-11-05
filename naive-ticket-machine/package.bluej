@@ -1,10 +1,10 @@
 #BlueJ package file
 objectbench.height=76
-objectbench.width=530
-package.editor.height=316
-package.editor.width=422
+objectbench.width=649
+package.editor.height=363
+package.editor.width=541
 package.editor.x=90
-package.editor.y=86
+package.editor.y=73
 package.numDependencies=0
 package.numTargets=1
 package.showExtends=true
@@ -16,7 +16,7 @@ readme.editor.x=0
 readme.editor.y=22
 target1.editor.height=741
 target1.editor.width=915
-target1.editor.x=466
+target1.editor.x=109
 target1.editor.y=23
 target1.height=60
 target1.name=TicketMachine

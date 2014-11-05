@@ -21,7 +21,7 @@ public class TicketMachine
     private int ticketCount;
     // the discount 
     private double discount = 0.2;
-    
+
     /**
      * Create a machine that issues tickets of the given price.
      * Note that the price must be greater than zero, and there
@@ -44,6 +44,7 @@ public class TicketMachine
     public void setDiscount(double newDiscount){
         discount = newDiscount;
     }
+
     /**
      * Return the price of a ticket.
      */
@@ -76,28 +77,41 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        int saving = (int)(price * discount);     
-        int discountedPrice = price - saving;
-        
-        if (balance >= discountedPrice){
-            ticketCount = ticketCount + 1;
-
-            // Simulate the printing of a ticket.
-            System.out.println("##################");
-            System.out.println("# The BlueJ Line");
-            System.out.println("# Ticket");
-            System.out.println("# " + discountedPrice + " cents.");
-            System.out.println("# Ticket no " + ticketCount );
-            System.out.println("##################");
-            System.out.println();
-            // Update the total collected with the balance.
-            total = total + discountedPrice;
-            // Clear the balance.
-            balance = balance - discountedPrice;
+        int price = getDiscountedPrice();
+        if (balance >= price){
+            issueTicket(price);
         }
         else {
-            System.out.println("Es ist nicht genug Geld eingeworfen worden");
-            System.out.println("Balance: "+balance);
+            printErrorMessage();
         }
+    }
+
+    public int getDiscountedPrice(){
+        int saving = (int)(price * discount);     
+        int discountedPrice = price - saving;
+        return discountedPrice;
+    }
+
+    public void issueTicket(int price){
+       
+        ticketCount = ticketCount + 1;
+
+        // Simulate the printing of a ticket.
+        System.out.println("##################");
+        System.out.println("# The BlueJ Line");
+        System.out.println("# Ticket");
+        System.out.println("# " + price + " cents.");
+        System.out.println("# Ticket no " + ticketCount );
+        System.out.println("##################");
+        System.out.println();
+        // Update the total collected with the balance.
+        total = total + price;
+        // Clear the balance.
+        balance = balance - price;
+    }
+
+    public void printErrorMessage(){
+        System.out.println("Es ist nicht genug Geld eingeworfen worden");
+        System.out.println("Balance: "+balance);
     }
 }
