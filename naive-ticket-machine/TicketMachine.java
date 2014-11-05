@@ -17,14 +17,17 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    // how many tickets have been issued
     private int ticketCount;
+    // the discount 
+    private double discount = 0.2;
     
     /**
      * Create a machine that issues tickets of the given price.
      * Note that the price must be greater than zero, and there
      * are no checks to ensure this.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int cost,double newDiscount)
     {
         if (cost > 0){
             price = cost;
@@ -35,8 +38,12 @@ public class TicketMachine
         balance = 0;
         total = 0;
         ticketCount = 0;
+        discount = newDiscount;
     }
 
+    public void setDiscount(double newDiscount){
+        discount = newDiscount;
+    }
     /**
      * Return the price of a ticket.
      */
