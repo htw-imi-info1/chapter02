@@ -71,6 +71,15 @@ public class TicketMachine
     }
 
     /**
+     * return remaining balance.
+     */
+    public int refundBalance(){
+        int balanceToReturn = balance;
+        balance = 0;
+        return balanceToReturn;
+    }
+
+    /**
      * Print a ticket.
      * Update the total collected and
      * reduce the balance to zero.
@@ -93,7 +102,7 @@ public class TicketMachine
     }
 
     public void issueTicket(int price){
-       
+
         ticketCount = ticketCount + 1;
 
         // Simulate the printing of a ticket.
