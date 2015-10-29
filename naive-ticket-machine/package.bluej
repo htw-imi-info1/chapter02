@@ -1,4 +1,6 @@
 #BlueJ package file
+objectbench.height=100
+objectbench.width=364
 package.editor.height=316
 package.editor.width=561
 package.editor.x=478
@@ -21,6 +23,7 @@ target1.name=TicketMachine
 target1.naviview.expanded=true
 target1.showInterface=false
 target1.type=ClassTarget
+target1.typeParameters=
 target1.width=120
 target1.x=170
 target1.y=100
