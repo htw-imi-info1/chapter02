@@ -25,7 +25,13 @@ public class TicketMachine
      */
     public TicketMachine(int price)
     {
-        this.price = price;
+        if (price < 0){
+            System.out.println("please provide a positive Ticket price");
+            price = 0;          
+        }
+        else{
+            this.price = price;
+        }
         balance = 0;
         total = 0;
     }
