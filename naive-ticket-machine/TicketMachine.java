@@ -58,7 +58,11 @@ public class TicketMachine
      */
     public void insertMoney(int amount)
     {
-        balance = balance + amount;
+        if (amount > 0){
+            balance = balance + amount;
+        }else{
+            System.out.println("Please insert an amount > 0");
+        }
     }
 
     /**
