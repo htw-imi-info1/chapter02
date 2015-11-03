@@ -90,4 +90,18 @@ public class TicketMachine
             balance = balance - price;
         }
     }
+
+    public int refundBalance(){
+        int refund = balance;
+        balance = 0;
+        return refund;
+    }
+
+    public static void test(){
+        TicketMachine bvg = new TicketMachine(270);
+        bvg.insertMoney(300);
+        bvg.printTicket();
+        System.out.println("Change:"+bvg.refundBalance()+" cents");
+
+    }
 }
