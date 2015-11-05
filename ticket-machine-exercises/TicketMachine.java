@@ -12,11 +12,13 @@
 public class TicketMachine
 {
     // The price of a ticket from this machine.
-    private int price;
+    private int price = 0;
     // The amount of money entered by a customer so far.
-    private int balance;
+    private int balance = 0;
     // The total amount of money collected by this machine.
-    private int total;
+    private int total = 0;
+    // number of tickets that have been issued
+    private int count = 0;
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -83,7 +85,7 @@ public class TicketMachine
             System.out.println("# " + price + " cents.");
             System.out.println("##################");
             System.out.println();
-
+            count++;
             // Update the total collected with the balance.
             total = total + price;
             // Clear the balance.
@@ -97,11 +99,13 @@ public class TicketMachine
         return refund;
     }
 
-    public static void test(){
-        TicketMachine bvg = new TicketMachine(270);
-        bvg.insertMoney(300);
+    public static TicketMachine test(){
+        TicketMachine bvg = new TicketMachine(200);
+        bvg.insertMoney(400);
+        bvg.printTicket();
         bvg.printTicket();
         System.out.println("Change:"+bvg.refundBalance()+" cents");
-
+        System.out.println("Ticket count"+bvg.count);
+        return bvg;
     }
 }

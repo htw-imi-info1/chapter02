@@ -17,5 +17,5 @@ comment4.text=\n\ Print\ a\ ticket.\n\ Update\ the\ total\ collected\ and\n\ red
 comment5.params=
 comment5.target=int\ refundBalance()
 comment6.params=
-comment6.target=void\ test()
+comment6.target=TicketMachine\ test()
 numComments=7
