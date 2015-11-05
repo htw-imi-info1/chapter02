@@ -20,6 +20,9 @@ public class TicketMachine
     // number of tickets that have been issued
     private int count = 0;
 
+    double savings = 0;
+    int discountedPrice = 0;
+
     /**
      * Create a machine that issues tickets of the given price.
      * Note that the price must be greater than zero, and there
@@ -27,6 +30,9 @@ public class TicketMachine
      */
     public TicketMachine(int price)
     {
+        double discount = 0.2;
+        savings = price * discount;
+        discountedPrice = (int)(price - savings);
         if (price < 0){
             System.out.println("please provide a positive Ticket price");
             price = 0;          
@@ -74,22 +80,22 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        if(balance < price){
+        if(balance < discountedPrice){
             System.out.println("please insert more money first.");
-            System.out.println("please insert: "+(price-balance)+" more cents.");
+            System.out.println("please insert: "+(discountedPrice-balance)+" more cents.");
         } else {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
             System.out.println("# Ticket");
-            System.out.println("# " + price + " cents.");
+            System.out.println("# " + discountedPrice + " cents.");
             System.out.println("##################");
             System.out.println();
             count++;
             // Update the total collected with the balance.
-            total = total + price;
+            total = total + discountedPrice;
             // Clear the balance.
-            balance = balance - price;
+            balance = balance - discountedPrice;
         }
     }
 
