@@ -98,12 +98,15 @@ public class TicketMachine
             System.out.println("# " + discountedPrice + " cents.");
             System.out.println("##################");
             System.out.println();
+            
+            
             count++;
             // Update the total collected with the balance.
             total = total + discountedPrice;
             // Clear the balance.
             balance = balance - discountedPrice;
         }
+        System.out.println("  current balance: "+balance);
     }
 
     public int refundBalance(){
