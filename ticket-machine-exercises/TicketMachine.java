@@ -22,6 +22,7 @@ public class TicketMachine
 
     double savings = 0;
     int discountedPrice = 0;
+    double discount;
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -30,20 +31,26 @@ public class TicketMachine
      */
     public TicketMachine(int price)
     {
-        double discount = 0.2;
-        savings = price * discount;
-        discountedPrice = (int)(price - savings);
+       
         if (price < 0){
             System.out.println("please provide a positive Ticket price");
             price = 0;          
         }
         else{
-            this.price = price;
+           this.price = price;
+           setDiscount(0.2);
         }
         balance = 0;
         total = 0;
     }
-
+    
+    public void setDiscount(double discount){
+        this.discount = discount;
+        savings = price * discount;
+        discountedPrice = (int)(price - savings);
+      
+    }
+    
     /**
      * Return the price of a ticket.
      */
