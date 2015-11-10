@@ -112,13 +112,27 @@ public class TicketMachine
         return refund;
     }
 
+    public int averageTicketPrice(){
+        // 5. assignment statement
+        int mean = (int)(total/count);
+        // 6. this gives the average price for tickets sold so far.
+        return mean;
+    }
+    /**
+     * this is an example how you could test your machine
+     * without using bluej / clicking through everything by hand.
+     */
     public static TicketMachine test(){
         TicketMachine bvg = new TicketMachine(200);
-        bvg.insertMoney(400);
+        bvg.insertMoney(4000);
         bvg.printTicket();
+        bvg.setDiscount(0.1);
         bvg.printTicket();
         System.out.println("Change:"+bvg.refundBalance()+" cents");
-        System.out.println("Ticket count"+bvg.count);
+        System.out.println("Ticket count: "+bvg.count);
+        System.out.println("Average price: "+bvg.averageTicketPrice());
+        
         return bvg;
     }
+    
 }
