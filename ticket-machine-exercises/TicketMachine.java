@@ -121,6 +121,11 @@ public class TicketMachine
         // 6. this gives the average price for tickets sold so far.
         return mean;
     }
+    public int emptyMachine(){
+        int total = this.total;
+        this.total = 0;
+        return total;
+    }
     /**
      * this is an example how you could test your machine
      * without using bluej / clicking through everything by hand.
@@ -134,6 +139,8 @@ public class TicketMachine
         System.out.println("Change:"+bvg.refundBalance()+" cents");
         System.out.println("Ticket count: "+bvg.count);
         System.out.println("Average price: "+bvg.averageTicketPrice());
+        System.out.println("emptyMachine returned: "+bvg.emptyMachine());
+        System.out.println("total is now: "+bvg.total);
         
         return bvg;
     }
