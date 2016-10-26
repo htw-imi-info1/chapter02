@@ -21,8 +21,14 @@ public class TicketMachine
      * are no checks to ensure this.
      */
     public TicketMachine(int cost)
-    {
-        price = cost;
+    {   
+        if (cost >= 0){
+            price = cost;
+        } else {
+            System.out.println("Price can't be negative");
+            price = 0;
+        }
+
         balance = 0;
         total = 0;
     }
@@ -64,24 +70,23 @@ public class TicketMachine
     public void printTicket()
     {
         if (balance >= price) {
-        // Simulate the printing of a ticket.
-        System.out.println("##################");
-        System.out.println("# The BlueJ Line");
-        System.out.println("# Ticket");
-        System.out.println("# " + price + " cents.");
-        System.out.println("##################");
-        System.out.println();
+            // Simulate the printing of a ticket.
+            System.out.println("##################");
+            System.out.println("# The BlueJ Line");
+            System.out.println("# Ticket");
+            System.out.println("# " + price + " cents.");
+            System.out.println("##################");
+            System.out.println();
 
-        // Update the total collected
-        total = total + price;
-        // Update the balance.
-        balance = balance - price;
-    } else{
-        System.out.println("Not enough money inserted");
-        System.out.println("You've inserted " + balance);
-        System.out.println("Ticket price is " + price);
-        
-        
-    } 
+            // Update the total collected
+            total = total + price;
+            // Update the balance.
+            balance = balance - price;
+        } else{
+            System.out.println("Not enough money inserted");
+            System.out.println("You've inserted " + balance);
+            System.out.println("Ticket price is " + price);
+
+        } 
     }
 }
