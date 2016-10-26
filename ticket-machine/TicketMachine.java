@@ -72,10 +72,10 @@ public class TicketMachine
         System.out.println("##################");
         System.out.println();
 
-        // Update the total collected with the balance.
-        total = total + balance;
-        // Clear the balance.
-        balance = 0;
+        // Update the total collected
+        total = total + price;
+        // Update the balance.
+        balance = balance - price;
     } else{
         System.out.println("Not enough money inserted");
         System.out.println("You've inserted " + balance);
