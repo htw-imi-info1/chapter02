@@ -20,10 +20,10 @@ public class TicketMachine
      * Note that the price must be greater than zero, and there
      * are no checks to ensure this.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int price)
     {   
-        if (cost >= 0){
-            price = cost;
+        if (price >= 0){
+            this.price = price;
         } else {
             System.out.println("Price can't be negative");
             price = 0;
