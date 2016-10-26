@@ -63,6 +63,7 @@ public class TicketMachine
      */
     public void printTicket()
     {
+        if (balance >= price) {
         // Simulate the printing of a ticket.
         System.out.println("##################");
         System.out.println("# The BlueJ Line");
@@ -75,5 +76,12 @@ public class TicketMachine
         total = total + balance;
         // Clear the balance.
         balance = 0;
+    } else{
+        System.out.println("Not enough money inserted");
+        System.out.println("You've inserted " + balance);
+        System.out.println("Ticket price is " + price);
+        
+        
+    } 
     }
 }
