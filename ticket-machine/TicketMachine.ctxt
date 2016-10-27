@@ -1,5 +1,5 @@
 #BlueJ class context
-comment0.params=cost
+comment0.params=price
 comment0.target=TicketMachine(int)
 comment0.text=\n\ Create\ a\ machine\ that\ issues\ tickets\ of\ the\ given\ price.\n\ Note\ that\ the\ price\ must\ be\ greater\ than\ zero,\ and\ there\n\ are\ no\ checks\ to\ ensure\ this.\n
 comment1.params=
@@ -14,4 +14,6 @@ comment3.text=\n\ Receive\ an\ amount\ of\ money\ from\ a\ customer.\n
 comment4.params=
 comment4.target=void\ printTicket()
 comment4.text=\n\ Print\ a\ ticket.\n\ Update\ the\ total\ collected\ and\n\ reduce\ the\ balance\ to\ zero.\n
-numComments=5
+comment5.params=
+comment5.target=int\ refundBalance()
+numComments=6

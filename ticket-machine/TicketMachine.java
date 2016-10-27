@@ -19,7 +19,7 @@ public class TicketMachine
      * Create a machine that issues tickets of the given price.
      * Note that the price must be greater than zero, and there
      * are no checks to ensure this.
-     */
+     */ 
     public TicketMachine(int price)
     {   
         if (price >= 0){
@@ -89,4 +89,18 @@ public class TicketMachine
 
         } 
     }
+
+    public int refundBalance(){
+        int balance = this.balance;
+        this.balance = 0;
+        return balance;
+    }
+
+    
+    
+    
+    
+    
+    
+    
 }
