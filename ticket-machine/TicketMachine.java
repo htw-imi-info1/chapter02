@@ -14,9 +14,10 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
-    
+
     private int ticketCounter = 0;
     private double discount = 0.2;
+    private double actualPrice;
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -34,6 +35,13 @@ public class TicketMachine
 
         balance = 0;
         total = 0;
+        actualPrice = price;
+    }
+
+    public void setDiscount(double discount){
+        this.discount = discount;
+        int saving = (int)(price * discount);
+        actualPrice = price - saving;
     }
 
     /**
@@ -43,6 +51,7 @@ public class TicketMachine
     {
         return price;
     }
+
     public int getTicketCounter()
     {
         return ticketCounter;
@@ -103,10 +112,6 @@ public class TicketMachine
         return balance;
     }
 
-    
-    
-    
-    
     
     
     
