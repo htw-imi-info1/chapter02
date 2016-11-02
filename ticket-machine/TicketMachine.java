@@ -16,6 +16,7 @@ public class TicketMachine
     private int total;
     
     private int ticketCounter = 0;
+    private double discount = 0.2;
 
     /**
      * Create a machine that issues tickets of the given price.
