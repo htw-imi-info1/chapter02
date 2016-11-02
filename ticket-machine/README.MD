@@ -5,6 +5,9 @@ Solutions to Worksheet 3: Exercises with the Ticket Machine
 
 1. count tickets issued
 ---------------------------------------------------
+counter "ticketCounter" als Feld
+ticketCounter wird bei/in printTicket erhöht
+
 2. introduce discount
 ----------------------------------------------------
 3. + 4. compute and use discount
