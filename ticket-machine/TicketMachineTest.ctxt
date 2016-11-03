@@ -3,4 +3,6 @@ comment0.params=
 comment0.target=TicketMachineTest()
 comment1.params=
 comment1.target=void\ testDiscount()
-numComments=2
+comment2.params=
+comment2.target=void\ testDiscount2()
+numComments=3
