@@ -16,8 +16,8 @@ public class TicketMachine
     private int total;
 
     private int ticketCounter = 0;
-    private double discount = 0.2;
-    private double actualPrice;
+    private double discount ;
+    private int actualPrice;
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -35,7 +35,8 @@ public class TicketMachine
 
         balance = 0;
         total = 0;
-        actualPrice = price;
+        
+        setDiscount(0.2);
     }
 
     public void setDiscount(double discount){
@@ -85,6 +86,7 @@ public class TicketMachine
      */
     public void printTicket()
     {
+        int price = actualPrice;
         if (balance >= price) {
             // Simulate the printing of a ticket.
             System.out.println("##################");
