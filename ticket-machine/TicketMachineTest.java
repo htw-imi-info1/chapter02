@@ -6,6 +6,26 @@ public class TicketMachineTest
     {
 
     }
+    public void testEmptyMachine(){
+        TicketMachine tm = new TicketMachine(200);
+        tm.insertMoney(200); 
+        tm.printTicket();
+        System.out.println("Empty Machine returned: "+tm.emptyMachine());
+        System.out.println("Total: "+tm.getTotal());
+        
+    }
+    
+    public void testEmptyMachine2(){
+        TicketMachine tm = new TicketMachine(200);
+        tm.insertMoney(200); 
+        tm.printTicket();
+        System.out.println("Empty Machine returned: "+tm.emptyMachine());
+        System.out.println("Total: "+tm.getTotal());
+        tm.insertMoney(200); 
+        tm.printTicket();
+        System.out.println("The mean should be computed correctly, that is, 160: "+tm.getMean());
+    }
+    
     public void testRemainingBalance(){
         TicketMachine tm = new TicketMachine(200);
         tm.insertMoney(50); 

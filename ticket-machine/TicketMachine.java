@@ -128,6 +128,16 @@ public class TicketMachine
         this.balance = 0;
         return balance;
     }
-
+    /**
+     * Assignment 8. Pretty much the
+     * same as refundBalance. 
+     * Both an accessor and a mutator.
+     */
+    public int emptyMachine(){
+        int total = this.total;
+        this.total = 0;
+        this.ticketCount = 0;
+        return total;
+    }
     
 }
