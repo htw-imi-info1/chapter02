@@ -15,7 +15,7 @@ public class TicketMachine
     // The total amount of money collected by this machine.
     private int total;
 
-    private int ticketCounter = 0;
+    private int ticketCount = 0;
     private double discount ;
     private int actualPrice;
 
@@ -55,9 +55,21 @@ public class TicketMachine
 
     public int getTicketCounter()
     {
-        return ticketCounter;
+        return ticketCount;
     }
 
+    public int getTotal(){
+        return total;
+    }
+    public int getMean(){
+        // Assignment 5:
+        int mean = total/ticketCount;
+        // Assignment 6: this method returns the mean,
+        // such that it can be used by other classes.
+        // note that the mean is computed every time
+        // this method is called.
+        return mean;
+    }
     /**
      * Return the amount of money already inserted for the
      * next ticket.
@@ -95,7 +107,7 @@ public class TicketMachine
             System.out.println("# " + price + " cents.");
             System.out.println("##################");
             System.out.println();
-            ticketCounter++;
+            ticketCount++;
             // Update the total collected
             total = total + price;
             // Update the balance.
