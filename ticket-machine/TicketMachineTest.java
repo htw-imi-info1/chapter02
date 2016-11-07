@@ -6,7 +6,12 @@ public class TicketMachineTest
     {
 
     }
-
+    public void testRemainingBalance(){
+        TicketMachine tm = new TicketMachine(200);
+        tm.insertMoney(50); 
+        tm.printTicket();
+        
+    }
     public void testMean()
     {
         TicketMachine tm = new TicketMachine(200);

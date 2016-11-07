@@ -35,7 +35,7 @@ public class TicketMachine
 
         balance = 0;
         total = 0;
-        
+
         setDiscount(0.2);
     }
 
@@ -61,6 +61,7 @@ public class TicketMachine
     public int getTotal(){
         return total;
     }
+
     public int getMean(){
         // Assignment 5:
         int mean = total/ticketCount;
@@ -70,6 +71,7 @@ public class TicketMachine
         // this method is called.
         return mean;
     }
+
     /**
      * Return the amount of money already inserted for the
      * next ticket.
@@ -116,8 +118,9 @@ public class TicketMachine
             System.out.println("Not enough money inserted");
             System.out.println("You've inserted " + balance);
             System.out.println("Ticket price is " + price);
-
         } 
+        System.out.println("remaining balance: "+balance+" cents.");
+
     }
 
     public int refundBalance(){
@@ -126,7 +129,5 @@ public class TicketMachine
         return balance;
     }
 
-    
-    
     
 }
