@@ -2,9 +2,12 @@
  * TicketMachine models a naive ticket machine that issues
  * flat-fare tickets.
  * The price of a ticket is specified via the constructor.
+ * It is a naive machine in the sense that it trusts its users
+ * to insert enough money before trying to print a ticket.
+ * It also assumes that users enter sensible amounts.
  *
  * @author David J. Barnes and Michael Kölling
- * @version 2011.07.31
+ * @version 2016.02.29
  */
 public class TicketMachine
 {
