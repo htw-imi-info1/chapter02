@@ -23,9 +23,9 @@ public class TicketMachine
      * Note that the price must be greater than zero, and there
      * are no checks to ensure this.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int ticketPrice)
     {
-        price = cost;
+        price = ticketPrice;
         balance = 0;
         total = 0;
     }
@@ -64,7 +64,7 @@ public class TicketMachine
     {
         // Simulate the printing of a ticket.
         System.out.println("##################");
-        System.out.println("# The BlueJ Line");
+        System.out.println("# The HTW Line");
         System.out.println("# Ticket");
         System.out.println("# " + price + " cents.");
         System.out.println("##################");
