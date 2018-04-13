@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=TicketMachine
 comment0.text=\n\ TicketMachine\ models\ a\ naive\ ticket\ machine\ that\ issues\n\ flat-fare\ tickets.\n\ The\ price\ of\ a\ ticket\ is\ specified\ via\ the\ constructor.\n\ It\ is\ a\ naive\ machine\ in\ the\ sense\ that\ it\ trusts\ its\ users\n\ to\ insert\ enough\ money\ before\ trying\ to\ print\ a\ ticket.\n\ It\ also\ assumes\ that\ users\ enter\ sensible\ amounts.\n\n\ @author\ David\ J.\ Barnes\ and\ Michael\ K\u00F6lling\n\ @version\ 2016.02.29\n
-comment1.params=cost
+comment1.params=ticketPrice
 comment1.target=TicketMachine(int)
 comment1.text=\n\ Create\ a\ machine\ that\ issues\ tickets\ of\ the\ given\ price.\n\ Note\ that\ the\ price\ must\ be\ greater\ than\ zero,\ and\ there\n\ are\ no\ checks\ to\ ensure\ this.\n
 comment2.params=
