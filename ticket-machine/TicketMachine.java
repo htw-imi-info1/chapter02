@@ -71,8 +71,8 @@ public class TicketMachine
         System.out.println();
 
         // Update the total collected with the balance.
-        total = total + balance;
+        total = total + price;
         // Clear the balance.
-        balance = 0;
+        balance = balance - price;
     }
 }
