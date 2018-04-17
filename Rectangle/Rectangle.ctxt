@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Rectangle
 comment0.text=\n\ Write\ a\ description\ of\ class\ Rectangle\ here.\n\n
-comment1.params=initialHeight\ initialWidth
+comment1.params=height\ initialWidth
 comment1.target=Rectangle(int,\ int)
 comment2.params=
 comment2.target=int\ getArea()
