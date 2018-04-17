@@ -6,13 +6,12 @@
 public class Rectangle
 {
     private int height = 0, width = 0;
-    public Rectangle(int initialHeight, int initialWidth){
-        height = initialHeight;
+    public Rectangle(int height, int initialWidth){
+        this.height = height;
         width = initialWidth;
     }
 
     public int getArea(){
-        int area = height * width;
-        return area;
+        return height * width;
     }
 }
