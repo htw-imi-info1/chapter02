@@ -62,17 +62,22 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        // Simulate the printing of a ticket.
-        System.out.println("##################");
-        System.out.println("# The HTW Line");
-        System.out.println("# Ticket");
-        System.out.println("# " + price + " cents.");
-        System.out.println("##################");
-        System.out.println();
+        // c) check money in machine
+        if (balance >= price) {
+            // Simulate the printing of a ticket.
+            System.out.println("##################");
+            System.out.println("# The HTW Line");
+            System.out.println("# Ticket");
+            System.out.println("# " + price + " cents.");
+            System.out.println("##################");
+            System.out.println();
 
-        // Update the total collected with the balance.
-        total = total + balance;
-        // Clear the balance.
-        balance = 0;
+            // Update the total collected with the balance.
+            // b) compute total correctly
+            total = total + price;
+            // Clear the balance.
+            // a) compute balance correctly
+            balance = balance - price;
+        }
     }
 }
