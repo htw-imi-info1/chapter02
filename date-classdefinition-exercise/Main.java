@@ -16,8 +16,8 @@ public class Main {
         // result in a compile error - then define the 
         // methods:
         //
-        // Date date = new Date(2022,4,22);
-        // System.out.println(date.format());
+        Date date = new Date(2022,4,22);
+        System.out.println(date.format());
     }
     
 }
