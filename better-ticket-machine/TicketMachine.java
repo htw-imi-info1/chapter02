@@ -13,13 +13,23 @@ public class TicketMachine
 {
     // The price of a ticket from this machine.
     private int price;
+    // The price without discount
+    private int originalPrice;
     // The amount of money entered by a customer so far.
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
     // The number of tickets printed by this machine.
     private int count;
-    // Coins to return.
+    // The discount on the price
+    private double discount;
+    // The discount in percent on the price.
+    private int discountInPercent;
+    // The amount of money that is saved
+    private int saving;
+    // The mean of count and total
+    private double mean;
+    // Coins to return
     private int oneEuro = 100;
     private int twoEuros = 200;
     private int oneCent = 1;
@@ -34,9 +44,17 @@ public class TicketMachine
      * Note that the price must be greater than zero, and there
      * are no checks to ensure this.
      */
-    public TicketMachine(int ticketPrice)
+    public TicketMachine(int ticketPrice, double ticketDiscount)
     {
-        price = ticketPrice;
+        if(ticketDiscount >= 0.01 && ticketDiscount <= 1) {
+            discount = ticketDiscount;
+            discountInPercent = (int)(ticketDiscount*100);
+            price = (ticketPrice * (100 - discountInPercent)) / 100;
+            originalPrice = ticketPrice;
+        } else {
+            price = ticketPrice;
+            originalPrice = ticketPrice;
+        }
         balance = 0;
         total = 0;
     }
@@ -93,12 +111,25 @@ public class TicketMachine
             total = total + price;
             // Reduce the balance by the price.
             balance = balance - price;
+            //Increase count
+            count++;
+            //calculate mean
+            mean = ((double)total) / ((double)count);
+            saving = (int)((double)saving + ((double)originalPrice)*discount);
+            System.out.println("Your balance is " + balance + " cents.");
         }
         else {
+            System.out.println("Your balance is " + balance + " cents.");
             System.out.println("You must insert at least: " +
                                (price - balance) + " more cents.");
                     
         }
+    }
+
+    public int emptyMachine() {
+        int ret = total;
+        total = 0;
+        return ret;
     }
 
     /**
