@@ -81,6 +81,20 @@ public class Date{
             return false;
         }
   }
+  // Prints all leap years, 0-3000
+  public void testMethodIsLeapYear() {
+    int br = 0;
+    for (int i = 0; i <= 3000; i++) {
+        if (isLeapYear(i)) {
+            System.out.print(i+", ");
+            br++;
+        }
+        if (br == 10) {
+            System.out.println();
+            br = 0;
+        }
+    }
+  }
   
   public String format(){
 
