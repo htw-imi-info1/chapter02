@@ -11,7 +11,31 @@ public class Date{
         }
   }
   
-  //Checks whether a date is plausible. Accounts for leap years.
+  public void setDay(int day) {
+        if (isValidDate(this.year, this.month, day)) {
+            this.day = day;
+        } else {
+            System.out.println(this.year+"."+this.month+"."+day+" is not a valid date.");
+        }
+  }
+
+  public void setMonth(int month) {
+        if (isValidDate(this.year, month, this.day)) {
+            this.month = month;
+        } else {
+            System.out.println(this.year+"."+month+"."+this.day+" is not a valid date.");
+        }
+  }
+
+  public void setYear(int year) {
+        if (isValidDate(year, this.month, this.day)) {
+            this.year = year;
+        } else {
+            System.out.println(year+"."+this.month+"."+this.day+" is not a valid date.");
+        }
+  }
+  
+ //Checks whether a date is plausible. Accounts for leap years.
   private boolean isValidDate(int year, int month, int day) {
         if (year > 0) {
             if (month == 2) {
