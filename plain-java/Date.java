@@ -35,6 +35,18 @@ public class Date{
         }
   }
   
+  public int getYear() {
+        return year;
+  }
+
+  public int getMonth() {
+        return month;
+  }
+
+  public int getDay() {
+        return day;
+  }
+  
  //Checks whether a date is plausible. Accounts for leap years.
   private boolean isValidDate(int year, int month, int day) {
         if (year > 0) {
