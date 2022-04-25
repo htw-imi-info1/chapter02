@@ -17,13 +17,26 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    // The number of tickets printed by this machine.
+    private int count;
+    // Coins to return.
+    private int oneEuro = 100;
+    private int twoEuros = 200;
+    private int oneCent = 1;
+    private int twoCents = 2;
+    private int fiveCents = 5;
+    private int tenCents = 10;
+    private int twentyCents = 20;
+    private int fiftyCents = 50;
 
     /**
      * Create a machine that issues tickets of the given price.
+     * Note that the price must be greater than zero, and there
+     * are no checks to ensure this.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int ticketPrice)
     {
-        price = cost;
+        price = ticketPrice;
         balance = 0;
         total = 0;
     }
@@ -37,10 +50,10 @@ public class TicketMachine
     }
 
     /**
-     * Return The amount of money already inserted for the
+     * Return the amount of money already inserted for the
      * next ticket.
      */
-    public int getBalance()
+    public int getAmount()
     {
         return balance;
     }
@@ -98,5 +111,43 @@ public class TicketMachine
         amountToRefund = balance;
         balance = 0;
         return amountToRefund;
+    }
+    /**(For the bored) Can you make the better-ticket-machine
+     * give proper change with a minimal amount of Euro coins?
+     */
+
+    public String returnChange(){
+        int returnedAmount = balance;
+        balance = 0;
+        String ret = "";
+        while(returnedAmount>0){
+            if(returnedAmount>=twoEuros){
+                ret = ret + "twoEuros";
+                returnedAmount = returnedAmount - twoEuros;
+            } else if(returnedAmount>=oneEuro){
+                ret = ret + "oneEuro";
+                returnedAmount = returnedAmount - oneEuro;
+            } else if(returnedAmount>=fiftyCents){
+                ret = ret + "fiftyCents";
+                returnedAmount = returnedAmount - fiftyCents;
+            } else if(returnedAmount>=twentyCents){
+                ret = ret + "twentyCents";
+                returnedAmount = returnedAmount - twentyCents;
+            } else if(returnedAmount>=tenCents){
+                ret = ret + "tenCents";
+                returnedAmount = returnedAmount - tenCents;
+            } else if(returnedAmount>=fiveCents){
+                ret = ret + "fiveCents";
+                returnedAmount = returnedAmount - fiveCents;
+            } else if(returnedAmount>=twoCents){
+                ret = ret + "twoCents";
+                returnedAmount = returnedAmount - twoCents;
+            } else {
+                ret = ret + "oneCent";
+                returnedAmount = returnedAmount - oneCent;
+            }
+        }
+        System.out.println(ret);
+        return ret;
     }
 }
