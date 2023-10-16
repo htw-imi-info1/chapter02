@@ -9,7 +9,7 @@ import greenfoot.*;
  */
 public class KaraWorld extends World 
 {   
-    private static final int WORLD_WIDTH = 4;  // Number of horizontal cells
+    private static final int WORLD_WIDTH = 14;  // Number of horizontal cells
     private static final int WORLD_HEIGHT = 3;  // Number of vertical cells
 
     private static final int CELL_SIZE = 28; // Size of one cell
@@ -44,6 +44,7 @@ public class KaraWorld extends World
         addObject(myKara, 1, 5);
         myKara.setLocation(0, 1);
 
-        myKara.setLocation(1,1);
+        Tree tree = new Tree();
+        addObject(tree, 13, 1);
     }
 }

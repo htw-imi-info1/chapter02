@@ -15,8 +15,8 @@
 -- Kara Regeln (GERMAN) --
 ------------------------------------------------------------------------
 
--   Kara bewegt sich immer in die Richtung, in die er schaut.
--   Falls Kara ueber den Rand der Wiese hinausgeht, kommt er auf der 
+-   Kara bewegt sich immer in die Richtung, in die sie schaut.
+-   Falls Kara ueber den Rand der Wiese hinausgeht, kommt sie auf der 
     anderen Seite wieder herein.
 -   Kara kann nicht durch Baeume hindurchgehen.
 -   Kara kann Pilze schieben, falls hinter dem Pilz nicht ein zweiter 

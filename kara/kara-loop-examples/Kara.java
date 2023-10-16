@@ -48,7 +48,7 @@ public class Kara extends Actor
             {
                 // Could not push the mushroom
                 showWarning("Kara can't move because he can't push the mushroom!", 
-                    "Kara kann sich nicht bewegen, da er den Pilz nicht schieben kann!");
+                    "Kara kann sich nicht bewegen, da sie den Pilz nicht schieben kann!");
                 return;
             }
         }
@@ -60,7 +60,7 @@ public class Kara extends Actor
 
     /**
      * Kara turns left by 90 degrees <br>
-     * <i>Kara dreht sich um 90° nach links</i>
+     * <i>Kara dreht sich um 90 Grad nach links</i>
      */         
     public void turnLeft() 
     {
@@ -70,7 +70,7 @@ public class Kara extends Actor
 
     /**
      * Kara turns right by 90 degrees <br>
-     * <i>Kara dreht sich um 90° nach rechts</i>
+     * <i>Kara dreht sich um 90 Grad nach rechts</i>
      */         
     public void turnRight() 
     {
@@ -80,7 +80,7 @@ public class Kara extends Actor
 
     /**
      * Kara puts down a leaf <br>
-     * <i>Kara legt ein neues Kleeblatt an die Position, auf der er sich befindet</i>
+     * <i>Kara legt ein neues Kleeblatt an die Position, auf der sie sich befindet</i>
      */         
     public void putLeaf() 
     {
@@ -118,7 +118,7 @@ public class Kara extends Actor
 
     /**
      * Kara checks if he stands on a leaf <br>
-     * <i>Kara schaut nach, ob er sich auf einem Kleeblatt befindet</i>
+     * <i>Kara schaut nach, ob sie sich auf einem Kleeblatt befindet</i>
      * 
      * @return true if Kara stands on a leaf, false otherwise
      */         
@@ -129,7 +129,7 @@ public class Kara extends Actor
 
     /**
      * Kara checks if there is a tree in front of her <br>
-     * <i>Kara schaut nach, ob sich ein Baum vor ihr befindet</i>
+     * <i>Kara schaut nach, ob sich ein Baum vor ihm befindet</i>
      * 
      * @return true if there is a tree in front of Kara, false otherwise
      */         
@@ -161,8 +161,8 @@ public class Kara extends Actor
     }
 
     /**
-     * Kara checks if there is a mushroom in front of him <br>
-     * <i>Kara schaut nach, ob er einen Pilz vor sich hat</i>
+     * Kara checks if there is a mushroom in front of her <br>
+     * <i>Kara schaut nach, ob sie einen Pilz vor sich hat</i>
      * 
      * @return true if a mushroom is in front of a Kara, false otherwise
      */         
