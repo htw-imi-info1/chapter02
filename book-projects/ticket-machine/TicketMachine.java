@@ -1,11 +1,11 @@
 /**
- * TicketMachine models a naive ticket machine that issues
+ * TicketMachine models a ticket machine that issues
  * flat-fare tickets.
  * The price of a ticket is specified via the constructor.
  * It is a naive machine in the sense that it trusts its users
  * to insert enough money before trying to print a ticket.
  * It also assumes that users enter sensible amounts.
- *
+ * 
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  */
@@ -20,8 +20,6 @@ public class TicketMachine
 
     /**
      * Create a machine that issues tickets of the given price.
-     * Note that the price must be greater than zero, and there
-     * are no checks to ensure this.
      */
     public TicketMachine(int ticketPrice)
     {
@@ -31,7 +29,7 @@ public class TicketMachine
     }
 
     /**
-     * Return the price of a ticket.
+     * @return the price of a ticket.
      */
     public int getPrice()
     {
@@ -39,7 +37,7 @@ public class TicketMachine
     }
 
     /**
-     * Return the amount of money already inserted for the
+     * @return the amount of money already inserted for the
      * next ticket.
      */
     public int getBalance()
@@ -60,19 +58,24 @@ public class TicketMachine
      * Update the total collected and
      * reduce the balance to zero.
      */
-    public void printTicket()
+    public void issueTicket()
     {
-        // Simulate the printing of a ticket.
-        System.out.println("##################");
-        System.out.println("# The HTW Line");
-        System.out.println("# Ticket");
-        System.out.println("# " + price + " cents.");
-        System.out.println("##################");
-        System.out.println();
+        printTicket();
 
         // Update the total collected with the balance.
         total = total + balance;
         // Clear the balance.
         balance = 0;
+    }
+
+    private void printTicket()
+    {
+        // Simulate the printing of a ticket.
+        System.out.println("##################");
+        System.out.println("# The HTW Berlin Line");
+        System.out.println("# Ticket");
+        System.out.println("# " + price + " cents.");
+        System.out.println("##################");
+        System.out.println();
     }
 }

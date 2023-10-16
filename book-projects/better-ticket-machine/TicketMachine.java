@@ -21,15 +21,15 @@ public class TicketMachine
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int ticketPrice)
     {
-        price = cost;
+        price = ticketPrice;
         balance = 0;
         total = 0;
     }
 
     /**
-     * @Return The price of a ticket.
+     * @return the price of a ticket.
      */
     public int getPrice()
     {
@@ -37,7 +37,7 @@ public class TicketMachine
     }
 
     /**
-     * Return The amount of money already inserted for the
+     * @return the amount of money already inserted for the
      * next ticket.
      */
     public int getBalance()
@@ -65,16 +65,10 @@ public class TicketMachine
      * reduce the current balance by the ticket price. Print
      * an error message if more money is required.
      */
-    public void printTicket()
+    public void issueTicket()
     {
         if(balance >= price) {
-            // Simulate the printing of a ticket.
-            System.out.println("##################");
-            System.out.println("# The BlueJ Line");
-            System.out.println("# Ticket");
-            System.out.println("# " + price + " cents.");
-            System.out.println("##################");
-            System.out.println();
+            printTicket();
 
             // Update the total collected with the price.
             total = total + price;
@@ -87,7 +81,7 @@ public class TicketMachine
                     
         }
     }
-
+    
     /**
      * Return the money in the balance.
      * The balance is cleared.
@@ -98,5 +92,16 @@ public class TicketMachine
         amountToRefund = balance;
         balance = 0;
         return amountToRefund;
+    }
+    
+    private void printTicket()
+    {
+        // Simulate the printing of a ticket.
+        System.out.println("##################");
+        System.out.println("# The HTW Berlin Line");
+        System.out.println("# Ticket");
+        System.out.println("# " + price + " cents.");
+        System.out.println("##################");
+        System.out.println();
     }
 }
