@@ -6,7 +6,11 @@ public class TicketMachine
 
     public TicketMachine(int ticketPrice)
     {
-        price = ticketPrice;
+        if(ticketPrice >= 0){
+            price = ticketPrice;
+        } else {
+            price = 320; // Assignment statement
+        }
         balance = 0;
         total = 0;
     }
@@ -28,7 +32,7 @@ public class TicketMachine
 
     public void issueTicket()
     {
-        
+
         printTicket();
 
         // Update the total collected with the balance.
