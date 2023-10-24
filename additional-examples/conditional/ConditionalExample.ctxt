@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=ConditionalExample
+comment0.text=\n\ Write\ a\ description\ of\ class\ ConditionalExample\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=condition
+comment1.target=void\ example01(boolean)
+comment2.params=condition
+comment2.target=void\ example02(boolean)
+comment3.params=number
+comment3.target=void\ example03_even(int)
+comment4.params=
+comment4.target=void\ example04()
+comment5.params=points
+comment5.target=boolean\ validGrade01(int)
+comment6.params=points
+comment6.target=boolean\ validGrade(int)
+comment7.params=newPoints
+comment7.target=void\ setPoints01(int)
+comment8.params=newPoints
+comment8.target=void\ setPoints(int)
+numComments=9
