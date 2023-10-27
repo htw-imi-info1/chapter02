@@ -14,8 +14,24 @@ public class DigitDisplayKara extends Kara
         return -1; // has to return something to compile
     }
 
+    public void turnAround(){turnLeft();turnLeft();}
+
     public void multiMove(int n){
 
+        if(n<0){
+            turnAround();
+            int i=0;
+            while(i>n){
+                move();
+                i--;
+            }
+            turnAround();
+        } else {
+            int i=0;
+            while(i<n){
+                move();
+                i++;
+            }
+        }
     }
-
 }
